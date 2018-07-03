@@ -1,10 +1,10 @@
 post_install() {
-    systemd-sysusers elasticsearch.conf
-    systemd-tmpfiles --create elasticsearch.conf
+    systemd-sysusers elasticsearch5.conf
+    systemd-tmpfiles --create elasticsearch5.conf
 }
 
 post_upgrade(){
-    systemd-tmpfiles --create elasticsearch.conf
+    systemd-tmpfiles --create elasticsearch5.conf
 
     if [ "$(vercmp "$2" 5.0.0)" -lt 0 ]; then
         echo " >> "
